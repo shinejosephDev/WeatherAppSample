@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/weatherHomeFragment">
+
+    <fragment
+        android:id="@+id/weatherHomeFragment"
+        android:name="com.shinejoseph.weathersample.presentation.home.HomeFragment"
+        android:label="fragment_weather"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_weatherHomeFragment_to_weatherFavoritesFragment"
+            app:destination="@id/weatherFavoritesFragment" />
+        <action
+            android:id="@+id/action_weatherHomeFragment_to_weatherDetailsFragment"
+            app:destination="@id/weatherDetailsFragment">
+            <argument
+                android:name="name"
+                android:defaultValue=""
+                app:argType="string" />
+
+            <argument
+                android:name="lat"
+                android:defaultValue="0"
+                app:argType="float" />
+
+            <argument
+                android:name="lng"
+                android:defaultValue="0"
+                app:argType="float" />
+        </action>
+        <action
+            android:id="@+id/action_weatherHomeFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/weatherFavoritesFragment"
+        android:name="com.shinejoseph.weathersample.presentation.favorites.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites">
+        <action
+            android:id="@+id/action_weatherFavoritesFragment_to_weatherDetailsFragment"
+            app:destination="@id/weatherDetailsFragment">
+            <argument
+                android:name="name"
+                android:defaultValue=""
+                app:argType="string" />
+
+            <argument
+                android:name="lat"
+                android:defaultValue="0"
+                app:argType="float" />
+
+            <argument
+                android:name="lng"
+                android:defaultValue="0"
+                app:argType="float" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/weatherDetailsFragment"
+        android:name="com.shinejoseph.weathersample.presentation.detail.DetailFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="name"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="lat"
+            android:defaultValue="0"
+            app:argType="float" />
+
+        <argument
+            android:name="lng"
+            android:defaultValue="0"
+            app:argType="float" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.shinejoseph.weathersample.presentation.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings">
+
+    </fragment>
+
+</navigation>

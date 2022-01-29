@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="20dp" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/image"
+        android:textColor="@color/black"
+        tools:text="Today" />
+
+    <TextView
+        android:id="@+id/tvTemp"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDate"
+        android:layout_alignStart="@+id/tvDate"
+        android:layout_toEndOf="@+id/image"
+        android:textColor="@color/black"
+        tools:text="12C" />
+
+    <TextView
+        android:id="@+id/tvHumidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTemp"
+        android:layout_alignStart="@+id/tvTemp"
+        android:layout_toEndOf="@+id/image"
+        android:textColor="@color/black"
+        tools:text="12%" />
+
+    <TextView
+        android:id="@+id/tvWind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvHumidity"
+        android:layout_alignStart="@+id/tvHumidity"
+        android:layout_toEndOf="@+id/image"
+        android:textColor="@color/black"
+        tools:text="12km/h" />
+
+</RelativeLayout>
